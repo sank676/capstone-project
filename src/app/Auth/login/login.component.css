@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(161, 168, 201);
+    width: 700px;
+    margin-left: 300px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+   
+  }
+/* 
+  .navbar-dark .navbar-nav .nav-link {
+    color: white;
+    margin-right: 10px;
+  } */
+
+  

@@ -1,0 +1,35 @@
+
+  
+  <h1 class="display-1 text-center">Welcome User!!</h1>
+  <br>
+  <br>
+  <div class="d-flex justify-content-center">
+    <button id="projectsButton" class="btn btn-primary btn-lg">Projects</button>
+  </div>
+  
+  
+  
+  <div id="projectList" style="display: none;">
+    <ul id="projectNames"></ul>
+  </div>
+  
+  <script>
+    // Simulating data retrieval from the database
+    const projects = ['Project 1', 'Project 2', 'Project 3'];
+  
+    const projectsButton = document.getElementById('projectsButton');
+    const projectList = document.getElementById('projectList');
+    const projectNames = document.getElementById('projectNames');
+  
+    projectsButton.addEventListener('click', () => {
+      // Display the project list when the button is clicked
+      projectList.style.display = 'block';
+  
+      // Populate the project names
+      projects.forEach(project => {
+        const li = document.createElement('li');
+        li.textContent = project;
+        projectNames.appendChild(li);
+      });
+    });
+  </script>
