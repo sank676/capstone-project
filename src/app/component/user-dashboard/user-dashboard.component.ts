@@ -13,7 +13,7 @@ export class UserDashboardComponent {
    }
    logout(){
     localStorage.removeItem("token");
-    this.route.navigate(['/']);
+    this.route.navigate(['/login']);
    }
    projects() {
     this.route.navigate(['/userprojects']); 

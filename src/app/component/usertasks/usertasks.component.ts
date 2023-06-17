@@ -24,7 +24,7 @@ export class UsertasksComponent implements OnInit{
 
    logout(){
     localStorage.removeItem("token");
-    this.route.navigate(['/']);
+    this.route.navigate(['/login']);
    }
 
    loadTasks(): void {

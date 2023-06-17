@@ -13,7 +13,10 @@ export class AdminDashboardComponent implements OnInit {
    }
    logout(){
     localStorage.removeItem("token");
-    this.route.navigate(['/']);
+    this.route.navigate(['/login']);
+   }
+   deleteProject(){
+    
    }
 
 }

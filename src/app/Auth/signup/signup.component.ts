@@ -31,6 +31,7 @@ export class SignupComponent implements OnInit {
     this.user.password = this.password;
   
   this.user.role = 'user';
+  
 
   this.authService.signup(this.user).subscribe(res =>{
     if(res==null){
@@ -40,7 +41,7 @@ export class SignupComponent implements OnInit {
     else{
       console.log("registration successfull");
       alert("registrataion successfull");
-      this.route.navigate(['/']);
+      this.route.navigate(['/login']);
   
   }
 

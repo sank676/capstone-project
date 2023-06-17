@@ -17,7 +17,7 @@ export class UserprojectsComponent {
    }
    logout(){
     localStorage.removeItem("token");
-    this.route.navigate(['/']);
+    this.route.navigate(['/login']);
    }
 
   

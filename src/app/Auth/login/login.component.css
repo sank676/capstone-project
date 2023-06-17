@@ -8,10 +8,12 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
    
   }
-/* 
-  .navbar-dark .navbar-nav .nav-link {
-    color: white;
-    margin-right: 10px;
-  } */
+  .navbar {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.8);
 
-  
+  }

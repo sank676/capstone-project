@@ -12,8 +12,14 @@ export class TaskService {
 
   constructor(private http: HttpClient) { }
 
+  getTasks(){}
+
   getTasksByProjectId(projectId: string): Observable<Tasks[]> {
     const url = `${this.apiUrl}/tasks?projectId=${projectId}`;
     return this.http.get<Tasks[]>(url);
+  }
+
+  deleteTask(id: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/tasks/${id}`);
   }
 }

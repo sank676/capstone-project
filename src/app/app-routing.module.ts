@@ -2,18 +2,29 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './Auth/login/login.component';
 import { SignupComponent } from './Auth/signup/signup.component';
+import { AddprojectsComponent } from './component/addprojects/addprojects.component';
+import { AddtasksComponent } from './component/addtasks/addtasks.component';
 import { AdminDashboardComponent } from './component/admin-dashboard/admin-dashboard.component';
+import { ProjecttasksComponent } from './component/projecttasks/projecttasks.component';
 import { UserDashboardComponent } from './component/user-dashboard/user-dashboard.component';
 import { UserprojectsComponent } from './component/userprojects/userprojects.component';
 import { UsertasksComponent } from './component/usertasks/usertasks.component';
+import { ViewprojectComponent } from './component/viewproject/viewproject.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  {path:'',component:LoginComponent},
+  {path:'',component:HomeComponent},
+  {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path: 'user',component:UserDashboardComponent},
   {path: 'admin',component:AdminDashboardComponent},
   {path: 'userprojects',component:UserprojectsComponent},
-  {path: 'usertasks',component:UsertasksComponent}
+  {path: 'usertasks',component:UsertasksComponent},
+  {path:'addprojects',component:AddprojectsComponent},
+  {path:'viewproject',component:ViewprojectComponent},
+  {path:'projecttasks',component:ProjecttasksComponent},
+  {path:'addtasks',component:AddtasksComponent}
+  
 ];
 
 @NgModule({
