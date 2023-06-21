@@ -16,10 +16,11 @@
     <tr *ngFor="let task of tasks">
       <td>{{ task.taskId }}</td>
       <td>{{ task.taskName }}</td>
+      <td>{{ task.taskDescription }}</td>
       <td>{{ task.userId }}</td>
       <td>{{ task.status }}</td>
       <td>
-        <button class="btn btn-sm btn-danger" (click)="updateTask(task)">Delete</button>
+        <button class="btn btn-sm btn-danger" (click)="updateTask(task)">Edit</button>
         <button class="btn btn-sm btn-danger" (click)="deleteTask(task)">Delete</button>
       </td>
     </tr>

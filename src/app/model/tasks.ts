@@ -4,5 +4,5 @@ export class Tasks {
     userId: string = '';
     status:string ='';
     projectId:string ='';
-    tdescription:string ='';
+    taskDescription:string ='';
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Tasks } from 'src/app/model/tasks';
+import { TaskService } from 'src/app/task.service';
 
 @Component({
   selector: 'app-addtasks',
@@ -15,7 +16,8 @@ export class AddtasksComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private taskService: TaskService
   ) { }
 
   ngOnInit(): void {
@@ -29,7 +31,7 @@ export class AddtasksComponent implements OnInit {
       taskName: [''],
       userId: [''],
       status: [''],
-      description: ['']
+      taskDescription: ['']
     });
   }
 
@@ -41,16 +43,17 @@ export class AddtasksComponent implements OnInit {
         userId: this.addTaskGroup.get('userId')?.value,
         status: this.addTaskGroup.get('status')?.value,
         projectId: this.projectId,
-        tdescription: this.addTaskGroup.get('description')?.value
+        taskDescription: this.addTaskGroup.get('taskDescription')?.value
       };
 
-      // Save the task using the appropriate service or method
-      // For example, you can use a TaskService to save the task
-      // taskService.saveTask(task);
-
-      // Redirect to the project's task list page
-      this.router.navigate(['/projects', this.projectId, 'tasks']);
-    }
-  }
-
-}
+      console.log(task);
+  
+      this.taskService.saveTask(task).subscribe(() => {
+        // Redirect to the project's task list page
+        this.router.navigate(['/projecttasks', { projectId: this.projectId }]);
+      },
+      (error) => {
+        console.log(error);
+        // Handle the error
+      });
+    }}}

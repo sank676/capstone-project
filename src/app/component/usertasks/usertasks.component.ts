@@ -17,7 +17,8 @@ export class UsertasksComponent implements OnInit{
 
   ngOnInit(): void {
     this.routes.params.subscribe(params => {
-      this.projectId = params['projectId'];
+      console.log("usertask");
+      this.projectId = params["projectId"];
       this.loadTasks();
     });
   }
@@ -28,6 +29,7 @@ export class UsertasksComponent implements OnInit{
    }
 
    loadTasks(): void {
+    
     this.taskService.getTasksByProjectId(this.projectId).subscribe(tasks => {
       this.tasks = tasks;
     });

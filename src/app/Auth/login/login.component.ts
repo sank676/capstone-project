@@ -9,52 +9,36 @@ import { User } from 'src/app/model/user';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
- 
-  username : string = '';
-  password : string = '';
-  role : string = '';
-  roles : string[];
-  user:User= new User();
+  username: string = '';
+  password: string = '';
+  user: User = new User();
 
-  constructor(private authService : AuthService,private route : Router){
-    this.roles=[
-      'admin',
-      'user'
-    ]
-  }
+  constructor(private authService: AuthService, private router: Router) {}
+
   ngOnInit(): void {
     this.username = '';
     this.password = '';
-    
   }
-  login(){
+
+  login(): void {
     this.user.userName = this.username;
     this.user.password = this.password;
-    this.user.role = this.role;
 
-    this.authService.login(this.user).subscribe(res =>{
-      if(res==null){
-        alert("username or password is wrong");
+    this.authService.login(this.user).subscribe(
+      (res) => {
+        if (res == null) {
+          alert('Username or password is wrong');
+          this.ngOnInit();
+        } else {
+          console.log('Login successful');
+          // Store user details in local storage or perform any necessary actions
+          this.router.navigate(['/user']);
+        }
+      },
+      (err) => {
+        alert('Login failed');
         this.ngOnInit();
       }
-      else{
-        console.log("Login successfull");
-        localStorage.setItem("token",res.token);
-      
-
-      if(this.role=='user'){
-        this.route.navigate(['/user']);
-      }
-      if(this.role=='admin'){
-        this.route.navigate(['/admin']);
-      }
-    }
-
-    },err =>{
-      alert("login failed");
-      this.ngOnInit();
-    })
-    
+    );
   }
-
 }

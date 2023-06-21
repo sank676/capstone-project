@@ -30,7 +30,7 @@ export class SignupComponent implements OnInit {
     this.user.userName = this.username;
     this.user.password = this.password;
   
-  this.user.role = 'user';
+  // this.user.role = 'user';
   
 
   this.authService.signup(this.user).subscribe(res =>{

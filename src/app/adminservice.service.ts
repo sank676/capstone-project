@@ -7,7 +7,7 @@ import { Projects } from './model/projects';
   providedIn: 'root'
 })
 export class AdminserviceService {
-  apiUrl: any;
+  private apiUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
@@ -33,7 +33,7 @@ export class AdminserviceService {
   }
 
   getProjectById(id: number): Observable<Projects> {
-    return this.http.get<Projects>(`http://localhost:8080/rest/getbyid/${id}`);
+    return this.http.get<Projects>(`http://localhost:3000/tasks?projectId=${Projects}`);
   }
 
   saveUpdate(project:Projects):Observable<Object>{

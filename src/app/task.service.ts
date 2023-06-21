@@ -8,9 +8,14 @@ import { Tasks } from './model/tasks';
 })
 export class TaskService {
 
-  private apiUrl = 'http://localhost:3000/tasks';
+  private apiUri = 'http://localhost:3000/tasks';
+  private apiUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
+ 
+  saveTask(task: Tasks): Observable<Tasks> {
+    return this.http.post<Tasks>(this.apiUri, task);
+  }
 
   getTasks(){}
 

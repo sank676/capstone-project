@@ -50,4 +50,8 @@ export class ViewprojectComponent implements OnInit {
     // For example, navigate to the update page with the project ID
     this.router.navigate(['/update-project', project.projectId]);
   }
+  viewTasks(projectId: string): void {
+    this.router.navigate(['/projecttasks', projectId]);
+  }
+  
 }

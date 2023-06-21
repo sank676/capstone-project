@@ -1,26 +1,31 @@
 <app-navbar></app-navbar>
-  
-<h2>View Projects</h2>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Project ID</th>
-      <th>Project Name</th>
-      <th>Description</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Iterate over projects array and display project details -->
-    <tr *ngFor="let project of projects">
-      <td>{{ project.projectId }}</td>
-      <td>{{ project.projectName }}</td>
-      <td>{{ project.description }}</td>
-      <td>
-        <a [routerLink]="['/projecttasks', project.projectId]" class="btn btn-sm btn-primary mr-1">View Tasks</a>
 
-        <button class="btn btn-sm btn-primary" (click)="updateProject(project)">Edit</button>
-        <button class="btn btn-sm btn-danger" (click)="deleteProject(project)">Delete</button>      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="container mt-4">
+  <h2>View Projects</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-boxed">
+      <thead>
+        <tr>
+          <th>Project ID</th>
+          <th>Project Name</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Iterate over projects array and display project details -->
+        <tr *ngFor="let project of projects">
+          <td>{{ project.projectId }}</td>
+          <td>{{ project.projectName }}</td>
+          <td>{{ project.projectDescription }}</td>
+          <td>
+            <button class="btn btn-sm btn-primary mr-1" (click)="viewTasks(project.projectId)">View Tasks</button>
+
+            <button class="btn btn-sm btn-primary mx-1" (click)="updateProject(project)">Edit</button>
+            <button class="btn btn-sm btn-danger mx-1" (click)="deleteProject(project)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

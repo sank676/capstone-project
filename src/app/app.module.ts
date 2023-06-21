@@ -20,6 +20,9 @@ import { AddtasksComponent } from './component/addtasks/addtasks.component';
 import { ListtasksComponent } from './component/listtasks/listtasks.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavuserComponent } from './navuser/navuser.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+
 
 
 
@@ -41,6 +44,9 @@ import { NavuserComponent } from './navuser/navuser.component';
     ListtasksComponent,
     FooterComponent,
     NavuserComponent,
+    AboutComponent,
+    ContactComponent,
+    
     
     
   ],
